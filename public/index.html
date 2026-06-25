@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Coloca título -->
+    <title>BioLogic</title>
+
+    <style>
+        body {
+            display: block;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            cursor: none;
+        }
+
+        
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #6a96fe;
+        }
+    </style>
+
+    <!-- Importa as fontes e o phaser -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@v3.90.0/dist/phaser.min.js"></script>
+
+</head>
+
+
+<body>
+    <script type="Module">
+        //Importa as cenas do jogo .js
+        import { MenuScene } from './src/MenuScene.js';
+        import { Tutorial } from './src/Tutorial.js';
+        import { Level1 } from './src/Level1.js';
+        import { Level2 } from './src/Level2.js';
+        import { Level3 } from './src/Level3.js';
+        import { Level4 } from './src/Level4.js';
+        import { Level5 } from './src/Level5.js';
+        import { Level6 } from './src/Level6.js';
+        import { Level7 } from './src/Level7.js';
+        import { Level8 } from './src/Level8.js';
+        import { Level9 } from './src/Level9.js';
+        import { Level10 } from './src/Level10.js';
+        import { Level11 } from './src/Level11.js';
+        import { Level12 } from './src/Level12.js';
+        import { Level13 } from './src/Level13.js';
+        import { Level14 } from './src/Level14.js';
+        import { Level15 } from './src/Level15.js';
+        import { Encerramento } from './src/Encerramento.js';
+        import { FinalFeedback } from './src/FinalFeedback.js';
+        //Espera a fonte carregar na próprio index agora
+        window.onload = function () {
+            WebFont.load({
+                google: { families: ['Righteous'] },
+                active: function () {
+                    const config = {
+                        type: Phaser.AUTO,
+                        width: 1536,
+                        height: 730,
+                        scale: {
+                            mode: Phaser.Scale.EXTEND,
+                            autoCenter: Phaser.Scale.CENTER_BOTH
+                        },
+                        backgroundColor: '#6a96fe',
+                        scene: [MenuScene, Tutorial, Level1, Level2, Level3, Level4, Level5, Level6, Level7, Level8, Level9, Level10, Level11, Level12, Level13, Level14, Level15, Encerramento, FinalFeedback]
+                    };
+                    const game = new Phaser.Game(config);
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>
+
